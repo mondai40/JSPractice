@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <p id="demo" onclick="changeHTML()">Hello World click here</p>
+    <script>
+        function changeHTML() {
+            var tag = document.getElementsByTagName("p");
+            tag[0].innerHTML = "Found You!";
+        }
+    </script>
 </body>
 </html>
