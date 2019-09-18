@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML,CSS,JavaScript">
+    <meta name="description" content="HTML Structure, DOM, JavaScript assignment">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <base href="http://127.0.0.0" target="_blank">
+    <title>JS method test</title>
+</head>
+<body>
+    <h1 id="first"></h1>
+    <h2 id="second"></h2>
+    <h3 id="third"></h3>
+    <p id="description1"></p>
+    <p id="description2"></p>
+    <p id="description3"></p>
+    <p id="description4"></p>
+    <button id="button1"></button><br />
+    <input id="formInput1" type="text"><br />
+    <textarea id="textarea"></textarea><br />
+    <input id="formInput2" type="text"><br />
+    <button id="button2"></button><br />
+    <script>
+        //Show the absolute base URI of the document
+        var first = document.getElementById("first");
+        first.innerHTML = document.baseURI;
+
+        //Show the documents cookie
+        var second = document.getElementById("second");
+        if (document.cookie === null) {
+            second.innerHTML = document.cookie;
+        } else {
+            second.innerHTML = "There is no cookie."
+        }
+        // Show the documents doctype
+        var third = document.getElementById("third");
+        third.innerHTML = document.doctype;
+
+        // Show the mode used by the browser
+        var description1 = document.getElementById("description1");
+        description1.innerHTML = window.navigator.userAgent;
+
+        // Show the relative URI of the document
+        var description2 = document.getElementById("description2");
+        description2.innerHTML = location.pathname;
+
+        // Show the DOM implementation
+        var description3 = document.getElementById("description3");
+        description3.innerHTML = document.implementation;
+
+        // Show the documents encoding type
+        var description4 = document.getElementById("description4");
+        description4.innerHTML = document.inputEncoding;
+
+        // Show if error checking is enforced
+        // var button1 = document.getElementById("button1");
+        // button1.innerText = document.strictErrorChecking;
+        // the method above are not supported on present browsers
+
+        // Show the Title of the document
+        var formInput1 = document.getElementById("formInput1");
+        formInput1.value = document.title;
+
+        // Show all Javascript in an Input box
+        var textarea = document.getElementById("textarea");
+        textarea.value = document.scripts; //it will return object
+
+        // Insert a button, make it invisible whenever the mouse moves over it and appear again when the mouse leaves it.
+        var button2 = document.getElementById("button2");
+        button2.addEventListener("mouseover", function() {button2.style.display = "none"});
+        button2.addEventListener("mouseout", function() {button2.style.display = "block"});
+    </script>
+</body>
+</html>
