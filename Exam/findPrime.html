@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find Prime Numbers</title>
+</head>
+<body>
+    <!-- 1. A Website that finds primes using the Sieve of Eratosthenes
+        a.  Website must ask user to select how many prime numbers to find
+        b.  Website must then start to calculate primes
+                i. MUST use Sieve of Eratosthenes
+        c.  Website must update the user on a regular basis
+        d.  SPEED, Efficiency and Memory is king!
+            Help -->
+    <h1>Find Prime number by means of Sieve of Eratosthenes</h1>
+    <p>Type the number the range of numbers</p>
+    <input type="number" id="inputNumber">
+    <button onclick="findPrime()">FIND</button>
+    <br />
+    <div id="showPrime"></div>
+    <script>
+        function findPrime() {
+            var n = document.getElementById("inputNumber").value;
+            var numberList = makeNumberList(n);
+            var primeNumberList = makePrimeNumberList(numberList, n);
+            displayNumber(primeNumberList);
+        }
+
+        function makeNumberList(n) {
+            var numberList = [];
+            for (var i = 2; i <= n; i++) {
+                numberList.push(i);
+            }
+            return numberList;
+        }
+
+        function makePrimeNumberList(numberList, n) {
+            var primeNumberList = [];
+            var count = 0;
+            for (var j = 2; j <= n; j++) { //devisor
+                for (var z = 0; z < numberList.length; z++) {
+                    if (numberList[z] % j === 0) {
+                        count += 1;
+                        if (count === 1) {
+                            primeNumberList.push(numberList[z]);
+                        } else {
+                            numberList.splice(z, 1);
+                        }
+                    }
+                }
+                count = 0;
+            }
+            return primeNumberList;
+        }
+
+        function displayNumber(primeNumberList) {
+            var displayNumber = document.getElementById("showPrime");
+            displayNumber.innerHTML = ""; //clear HTML
+            var p = document.createElement("P");
+            p.innerHTML = "There are " + primeNumberList.length + " prime numbers.";
+            displayNumber.appendChild(p);
+            for (x = 0; x < primeNumberList.length; x++) {
+                var p = document.createElement("P");
+                p.innerHTML = primeNumberList[x];
+                displayNumber.appendChild(p);
+            }
+        }
+    </script>
+</body>
+</html>

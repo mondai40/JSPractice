@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="postalcode">
+    <button>SHOW</button>
+    <p>input your postal code on the input form above.</p>
+    <div class="mypanel"></div>
+    <script>
+        $.getJSON('http://geoapi.heartrails.com/api/json?method=searchByPostal', function(data) {
+            var text = `Data: ${data.date}<br />
+                        Time: ${data.time}<br />
+                        Unix time: ${data.milliseconds_since_epoch}`
+            $(".mypanel").html(text);
+        });
+    </script>
+</body>
+</html>
