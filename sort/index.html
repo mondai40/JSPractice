@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <script src="./js/bubblesort.js"></script>
+    <title>Document</title>
+    <style>
+        .sortScreen {
+            display: flex;
+            width: 600px;
+            margin: 0px auto;
+        }
+        .rightScreen, .leftScreen {
+            margin: 25px;
+            flex: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sort Numbers</h1>
+    <div class="sortScreen">
+        <div class="rightScreen">
+            <textarea name="number" id="originalNumber" cols="30" rows="10"></textarea>
+            <br />
+            <button onclick="generateNumbers()">Generate numbers</button>
+        </div>
+        <div class="leftScreen">
+            <textarea name="number" id="sortedNumber" cols="30" rows="10"></textarea>
+            <br />
+            <button onclick="sortNumbers()">Bubble sort</button>
+        </div>
+    </div>
+    <script>
+        
+    </script>
+</body>
+</html>
