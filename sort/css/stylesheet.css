@@ -1,0 +1,9 @@
+.sortScreen {
+    display: flex;
+    width: 600px;
+    margin: 0px auto;
+}
+.rightScreen, .leftScreen {
+    margin: 25px;
+    flex: auto;
+}

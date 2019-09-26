@@ -6,18 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/stylesheet.css">
     <script src="./js/bubblesort.js"></script>
+    <script src="./js/insertionsort.js"></script>
     <title>Document</title>
-    <style>
-        .sortScreen {
-            display: flex;
-            width: 600px;
-            margin: 0px auto;
-        }
-        .rightScreen, .leftScreen {
-            margin: 25px;
-            flex: auto;
-        }
-    </style>
 </head>
 <body>
     <h1>Sort Numbers</h1>
@@ -30,7 +20,8 @@
         <div class="leftScreen">
             <textarea name="number" id="sortedNumber" cols="30" rows="10"></textarea>
             <br />
-            <button onclick="sortNumbers()">Bubble sort</button>
+            <button onclick="bubbleSortNumbers()">Bubble sort</button><br/>
+            <button onclick="insertionSortNumbers()">Insertion sort</button>
         </div>
     </div>
     <script>

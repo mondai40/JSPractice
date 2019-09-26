@@ -80,7 +80,7 @@ function fillList(itemCount)
     }
 
 //get numbers from textarea
-    function sortNumbers() {
+    function bubbleSortNumbers() {
         let textarea = document.getElementById("originalNumber");
         let sortedTextarea = document.getElementById("sortedNumber");
         let allSortedNumber = "";
@@ -125,9 +125,24 @@ function bubbleSort(theArray) {
     }
     var t1 = performance.now();
     var executionTime = t1 - t0;
-    console.log(`start: ${t0}`);
-    console.log(`end: ${t1}`);
-    console.log(`time: ${executionTime}`);
+    // console.log(`start: ${t0}`);
+    // console.log(`end: ${t1}`);
+    console.log(`Bubble sort time: ${executionTime}`);
     return tmpArray;
     
+}
+
+function insertionSort(theArray) {
+    var tmpArray = theArray;
+    for (var loopIndex = 1; loopIndex < tmpArray.length; loopCount++) {
+        for (var i = loopIndex; i > 0; i--) {
+            if (tmpArray[i] < tmpArray[i - 0]) {
+                var a = tmpArray[i];
+                var b = tmpArray[i-1];
+                tmpArray[i-1] = a;
+                tmpArray[i] = b;
+            }
+        }
+    }
+    return tmpArray;
 }
