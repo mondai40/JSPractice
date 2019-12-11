@@ -4,11 +4,31 @@ $(document).ready(function(){
 	var controller = new ScrollMagic.Controller();
 
 	//pin the intro
-	var pinIntro = new ScrollMagic.Scene({
+	var pinIntroScene = new ScrollMagic.Scene({
 		triggerElement: "#intro",
 		triggerHook: 0,
+		duration: "30%",
 	})
-	.setPin("#intro")
+	.addIndicators({
+		name: 'pin1 scene',
+		colorTrigger: 'purple',
+		colorStart: 'yellow',
+		colorEnd: 'gray'
+	}) 
+	.setPin("#intro", {pushFollowers: false})
+	.addTo(controller);
+
+	var pinIntroScene2 = new ScrollMagic.Scene({
+		triggerElement: "#project01",
+		triggerHook: 0.4,
+	})
+	.setPin("#intro", {pushFollowers: false})
+	.addIndicators({
+		name: 'pin2 scene',
+		colorTrigger: 'blue',
+		colorStart: 'orange',
+		colorEnd: 'red'
+	}) 
 	.addTo(controller);
 
 	// loop through each .project element
@@ -17,7 +37,7 @@ $(document).ready(function(){
 		// build a scene
 		var ourScene = new ScrollMagic.Scene({
 			triggerElement: this.children[0],
-			triggerHook: 0.5
+			triggerHook: 0.9
 		})
 		.setClassToggle(this, 'fade-in') // add class to project01
 		.addIndicators({
