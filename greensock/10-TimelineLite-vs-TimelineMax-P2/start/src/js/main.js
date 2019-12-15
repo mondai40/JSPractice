@@ -13,6 +13,7 @@
 
 	// TimelineLite vs TimelineMax
 	tl
+		.set("header", {autoAlpha: 1})
 		.from(h1, 0.3, {y: -15, autoAlpha: 0, ease:Power1.easeOut})
 		.from(intro, 0.3, {y: -15, autoAlpha: 0, ease:Power1.easeOut}, '-=0.15')
 		.from(img, 0.3, {y: -15, autoAlpha: 0, ease:Power1.easeOut}, '-=0.15')
@@ -33,7 +34,20 @@
 		);
 
 	function loadContent(){
-		console.log('bring on the content');
+		var tlLoaderOut = new TimelineLite({onComplete: contentIn});
+		tlLoaderOut
+			.set(dot, {backgroundColor: "#2b4d66"})
+			.to(loader, 0.3, {autoAlpha:1, scale: 1.3, ease: Power0.easeNone})
+			.staggerFromTo(dot, 0.3,
+				{y: 0, autoAlpha: 0},
+				{y: 20, autoAlpha: 1, ease:Back.easeInOut},
+				0.05, 0
+			)
+			.to(loader, 0.3, {y: -150, autoAlpha: 0, ease: Back.easeIn}, "+=0.3");
+	}
+
+	function contentIn() {
+		tl.play();
 	}
 
 	$('#btnPlay').on('click',function(){
