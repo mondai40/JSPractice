@@ -62,114 +62,63 @@ textarea {
    ========================================================================== */
 
 body {
-  font: 16px/1.5 'Raleway', Helvetica, Helvetica Neue, Arial, sans-serif; }
-
-.wrapper {
-  max-width: 350px;
-  margin: 0 10%; }
-
-/* Make the body 100% of the browser viewport height */
-html, body {
-  height: 100%;
-  margin: 0; 
-}
-
-h1 {
-  font-size: 2em;
-  margin-top: 0;
-  font-family: 'Roboto Condensed', Helvetica, Helvetica Neue, Arial, sans-serif;
-  font-weight: 700; 
-}
-
-body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 16px/1.5 'Raleway', Helvetica, Helvetica Neue, Arial, sans-serif;
+    background-color: #FFF6ED;
+    color: #222222;
 }
 
 .wrapper {
     width: 90%;
-    margin: 0 5%;
+    margin: 0 auto;
+    max-width: 1140px;
+    position: relative;
+    z-index: 2;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-/* =Main */
-p {
-  font-size: 16px; 
+/* =General */
+h1 {
+    font-size: 25px;
+    line-height: 35px;
+    margin-top: 0;
+}
+.intro {
+    font-size: 16px;
+    line-height: 20px;
+    opacity: 0.8;
+    margin: 0 auto;
+}
+.intro-img img {
+    max-width: 90%;
+}
+.section-static {
+    padding: 40px 0;
+    background-color: #fff;
+}
+.bcg-blue {
+    background-color: #E8F4FF;
+}
+.bcg-green {
+    background-color: #D0FDEF;
 }
 
-#slide01, #slide03, #slide05 {
-  background-color: #FFFFFF; 
-}
-
-#slide00, #slide02, #slide04 {
-  background-color: #EDEDED; 
-}
-
-.slide {
-  position: relative;
-  overflow: hidden;
-  height: 100vh; 
-}
-    .slide .pin-wrapper {
-        width: 100%;
-        height: 100%;
-    }
-    .slide .wrapper {
-        position: absolute;
-        top: 45%;
-        left: 50%; 
-    }
-    .slide .img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 700px;
-        height: 418px;
-        background: url(../img/img_macbook01.png) no-repeat top left;
-        transform: translate(-80%, -40%); 
-    }
-
-#slide02 .img {
-  background-image: url(../img/img_macbook02.png);}
-
-#slide03 .img {
-  background-image: url(../img/img_macbook01.png);}
-
-#slide04 .img {
-  background-image: url(../img/img_macbook02.png);}
-
-#slide02 .pin-wrapper,
-#slide03 .pin-wrapper {
-    transform: translateY(-100%);
-}
-#slide04 .pin-wrapper {
-    transform: translateY(-300%);
-}
-.scrollmagic-pin-spacer {
-    position: absolute !important;
-    clip: rect(auto, auto, auto, auto);
+/* =Header */
+header {
+    padding: 40px 0;
+    text-align: center;
 }
 
 /* =Footer */
-.footer-container {
+footer {
     text-align: center;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.5);
-    background-color: #06060d; 
+    background-color: #e6e9ed;
 }
-.footer-container .wrapper {
-    width: 80%;
-    max-width: none;
-    margin: 0 10%; 
+footer a {
+    text-decoration: none;
+    color: #222222;
 }
-.footer-container h3 {
-    margin: 0;
-    padding: 20px 0;
-    font-weight: normal; 
-}
-.footer-container a {
-    color: rgba(255, 255, 255, 0.5); 
+footer a:hover {
+    text-decoration: underline;
 }
 
 
@@ -187,8 +136,104 @@ p {
 
 @media only screen and (min-width: 768px) {
     /* =General */
+    h1 {
+        font-size: 50px;
+        line-height: 60px;
+        margin-top: 0;
+    }
+    .intro {
+        font-size: 24px;
+        line-height: 34px;
+        opacity: 0.8;
+        max-width: 40%;
+        margin: 0 auto 40px auto;
+    }
+    .intro-img {
+        max-width: 80%;
+        text-align: center;
+        margin: 0 auto ;
+    }
+    .intro-img img {
+        max-width: 70%;
+    }
+    .section-static {
+        padding: 100px 0;
+        text-align: center;
+    }
+    .bcg-white {
+        background: #fff;
+        height: 60vh;
+    }
+
+    #reveal-effect {
+        text-align: center;
+    }
+    .subtitle {
+        font-size: 1.5em;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .parts {
+        list-style: none;
+        margin: 100px 0 0 0;
+        padding: 0;
+    }
+    .parts li {
+        margin-bottom: 60px;
+        overflow: hidden;
+        background: url('../img/img_pen.png') no-repeat 50% 0;
+        background-size: 90px auto;
+    }
+    .parts h2 {
+        width: 40%;
+        margin: 0;
+        float: left;
+        text-align: right;
+        vertical-align: top;
+        /*background-color: pink;*/
+    }
+    .parts p {
+        font-size: 18px;
+        width: 25%;
+        margin: 0 0 0 20%;
+        float: left;
+        text-align: left;
+        /*background-color: yellow;*/
+    }
+    .parts li.part1 {
+        background-position: 50% 6px;
+        min-height: 110px;
+    }
+    .parts li.part2 {
+        background-position: 50% -221px;
+        min-height: 370px;
+    }
+
+    /* this is the pen body */
+    .parts li.part3 {
+        background: url('../img/img_pen-body.png') no-repeat 50% 0;
+        background-size: 90px auto;
+        min-height: 580px;
+    }
+    .parts li.part4 {
+        background-position: 50% -618px;
+        min-height: 430px;
+
+    }
+    .parts li.part5 {
+        background-position: 50% -1154px;
+        min-height: 150px;
+    }
+    .parts li.part6 {
+        background-position: 50% -1437px;
+        min-height: 150px;
+    }
 
     /* =Header */
+    header {
+        padding: 100px 0;
+    }
+
 
     /* =Footer */
 }
