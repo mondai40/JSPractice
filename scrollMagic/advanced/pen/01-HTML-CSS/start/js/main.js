@@ -25,8 +25,8 @@ $(document).ready(function(){
     .addTo(controller);
 
     //move 4 and 5 down, to connect with part 6
-    TweenMax.set(".part4", {y: 289});
-    TweenMax.set(".part5", {y: 120});
+    // TweenMax.set(".part4", {y: 289});
+    // TweenMax.set(".part5", {y: 120});
 
     //move part 6 to connect with the body
     TweenMax.set(".part6", {y: -846});
@@ -35,7 +35,16 @@ $(document).ready(function(){
     TweenMax.set(".part4", {y: -557}); /*289-846*/
     TweenMax.set(".part5", {y: -726}); /*120-846*/
 
-
+    var p6ToStart = new TweenMax.to(".part6", 1, {y: 0, ease: Linear.easeNone});
+    var p6ToStartScene = new ScrollMagic.Scene({
+        triggerElement: ".part1",
+        triggerHook: 1,
+        duration: 846,
+        offset: 1244
+    })
+    .setTween(p6ToStart)
+    .addIndicators()
+    .addTo(controller);
 
 
 });
