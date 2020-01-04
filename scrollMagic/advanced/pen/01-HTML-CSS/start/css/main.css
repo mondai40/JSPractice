@@ -233,6 +233,30 @@ footer a:hover {
         min-height: 150px;
     }
 
+    /* Fade in text */
+    .parts li h2,
+    .parts li p {
+        transition: all 0.3s ease-in;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .parts li.fade-in h2,
+    .parts li.fade-in p {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0px);
+    }
+
+    .parts li h2 {
+        transform: translateX(-20px);
+    }
+    .parts li p {
+        transform: translateX(20px);
+        transition-delay: 0.15s;
+    }
+
+
     /* =Header */
     header {
         padding: 100px 0;
