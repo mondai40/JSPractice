@@ -70,7 +70,6 @@ $(document).ready(function(){
             triggerHook: 0.55
         })
         .setClassToggle(this, "fade-in")
-        .addIndicators()
         .addTo(controller);
     });
 });
